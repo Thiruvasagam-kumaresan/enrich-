@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int nextpalindrome(int n)
+{
+	int remainder, n1, reverse=0;
+	n1 = n;
+	while (n)
+	{
+		remainder = n % 10;
+		reverse = reverse * 10 + remainder;
+		n /= 10;
+	}
+	if (n1 == reverse)
+	{
+	    cout <<"\a"<<"the next palindrome is"<<reverse;
+		return 1;
+	}
+}
+
+int main()
+{
+	int number;
+	cout <<"Enter the number";
+	cin >>number;
+	while(nextpalindrome(number)!=1)
+	{
+		number++;
+	}
+	return 0;
+}
